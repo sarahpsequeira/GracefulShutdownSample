@@ -21,7 +21,7 @@ cloud:
       static: us-west-2
     credentials:
       instanceProfile: true
-      accountId: 670055277015
+      accountId: 
 
 # remove the account Id
 
