@@ -1,0 +1,29 @@
+server.port: 8081
+
+
+spring.datasource.url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driverClassName: org.h2.Driver
+spring.datasource.username: sa
+spring.datasource.password: password
+spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+spring.h2.console.enabled: true
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    sns:
+      topic:
+        userAccess: outliers-1-case
+    region:
+      auto: false
+      static: us-west-2
+    credentials:
+      instanceProfile: true
+      accountId: 670055277015
+
+# remove the account Id
+
+server.shutdown.grace-period: 30s
+
