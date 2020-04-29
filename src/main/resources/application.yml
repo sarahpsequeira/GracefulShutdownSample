@@ -15,7 +15,7 @@ cloud:
       auto: false
     sns:
       topic:
-        userAccess: outliers-1-case
+        userAccess: 
     region:
       auto: false
       static: us-west-2
