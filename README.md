@@ -7,10 +7,15 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
 mvn clean package
 4) Go to the target folder get the jar name and run the application 
 5) Make sure you have add the topic name, aws region and aws accountId in the command line parameters as follows:
+
    -- cloud.aws.sns.topic.topicName // Topic which you created in the Aws SNS, e.g. topicName 
+   
    -- cloud.aws.region.static // Region of your aws topic, e.g. us-west-2
+   
    -- cloud.aws.credentials.accountId //your aws accountId java 
+   
    -Dcloud.aws.sns.topic.topicName=<topicName> -Dcloud.aws.region.static=<aws_region> -Dcloud.aws.credentials.accountId=<accountId> -jar demo-0.0.1-SNAPSHOT.jar
+   
 6) Do the following curl: 
   curl -ik -X GET "http://localhots:8081/api/users/lastName/Doe"
 7) Observe that the request is completed successfully and message is posted to the aws topic you have mentioned.
