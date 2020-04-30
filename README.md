@@ -26,8 +26,10 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
 
   ```curl -ik -X GET "http://localhots:8081/api/users/lastName/Doe```  
 
-3) Before the curl command gets complete issue a SIGTERM `(ctrl + c)`.
- -- expected result: request is completed and message is published to the topic. ```logs/graceful_shutdown_happy_path.log```
- -- actual result: request is completed but message is not published to topic.. (error is thrown)```logs/graceful_shutdown_error_path.log```
+3) Before the curl command gets complete issue a SIGTERM `(ctrl + c)`.  
+ #### Expected Result
+ Request is completed and message is published to the topic. ```logs/graceful_shutdown_happy_path.log```.  
+ #### Actual Result
+ Request is completed but message is not published to topic.. (error is thrown)```logs/graceful_shutdown_error_path.log```.   
  
 4) Notice that though the request is completed it does not publish message to the topic and error is thrown
