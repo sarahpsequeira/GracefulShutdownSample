@@ -6,7 +6,7 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
 3) Build the application to create the jar.  
 ```mvn clean package```
 4) Go to the target folder get the jar name and run the application 
-5) Make sure you have add the topic name, aws region and aws accountId in the command line parameters as follows:  
+5) Make sure you have added the topic name, aws region and aws accountId in the command line parameters as follows:  
    -- cloud.aws.sns.topic.topicName // Topic which you created in the Aws SNS, e.g. topicName   
    -- cloud.aws.region.static // Region of your aws topic, e.g. us-west-2.  
    -- cloud.aws.credentials.accountId //your aws accountId.   
@@ -26,5 +26,8 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
 
   ```curl -ik -X GET "http://localhots:8081/api/users/lastName/Doe```  
 
-3) Before the curl command gets complete issue a SIGTERM `(ctrl + c)`.  
+3) Before the curl command gets complete issue a SIGTERM `(ctrl + c)`.
+ -- expected result: request is completed and message is published to the topic. ```logs/graceful_shutdown_happy_path.log```
+ -- actual result: request is completed but message is not published to topic.. (error is thrown)```logs/graceful_shutdown_error_path.log```
+ 
 4) Notice that though the request is completed it does not publish message to the topic and error is thrown
