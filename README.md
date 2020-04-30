@@ -17,7 +17,9 @@ mvn clean package
 
 # Steps to reproduce:
 1) Start the application by running the following command:
+
   java -Dcloud.aws.sns.topic.topicName=<topicName> -Dcloud.aws.region.static=<aws_region> -Dcloud.aws.credentials.accountId=<accountId> -jar demo-0.0.1-SNAPSHOT.jar
+   
 2) Do the following curl command:
   curl -ik -X GET "http://localhots:8081/api/users/lastName/Doe
 3) Before the curl command gets complete issue a SIGTERM(ctrl + c)
