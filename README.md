@@ -28,10 +28,10 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
 
 3) Before the curl command gets complete issue a SIGTERM `(ctrl + c)`.  
  #### Expected Result
- Request is completed and message is published to the topic. You can see the success log here (logs/graceful_shutdown_happy_path.log)
+ Request is completed and message is published to the topic. You can see the success log here [graceful_shutdown_happy_path.log](https://github.com/sarahpsequeira/GracefulShutdownSample/blob/master/logs/graceful_shutdown_happy_path.log)
 
  #### Actual Result
- Request is completed but message is not published to topic. You can see the failure log here (logs/graceful_shutdown_error_path.log)
+ Request is completed but message is not published to topic. You can see the failure log here [graceful_shutdown_error_path.log](https://github.com/sarahpsequeira/GracefulShutdownSample/blob/master/logs/graceful_shutdown_error_path.log)
  ```
  2020-04-30 10:39:32.658  INFO 5515 --- [extShutdownHook] o.s.b.w.e.tomcat.TomcatGracefulShutdown  : Graceful shutdown complete
 2020-04-30 10:39:32.676 DEBUG 5515 --- [nnection-reaper] com.amazonaws.http.IdleConnectionReaper  : Reaper thread: 
