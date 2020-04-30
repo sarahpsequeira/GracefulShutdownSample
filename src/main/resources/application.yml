@@ -21,7 +21,7 @@ cloud:
     sns:
       topic:
         # Change the AWS topic
-        userAccess: topic-name
+        topicName: topic-name
     region:
       auto: false
       static: us-west-2

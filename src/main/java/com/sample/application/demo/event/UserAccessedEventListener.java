@@ -17,7 +17,7 @@ public class UserAccessedEventListener implements ApplicationListener<UserAccess
 
     NotificationMessagingTemplate notificationMessagingTemplate;
 
-    @Value("${cloud.aws.sns.topic.userAccess}")
+    @Value("${cloud.aws.sns.topic.topicName}")
     String snsTopicName;
 
     @Autowired

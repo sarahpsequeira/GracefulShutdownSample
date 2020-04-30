@@ -9,7 +9,7 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
  - Build the application to create the jar 
    `mvn clean package`
  - Go to the target folder get the jar name   and run the application
-   `Run the command "java -Dserver.port=8081 -jar {jar name}`    
+   `Run the command "java -Dcloud.aws.sns.topic.topicName=<topicName> -Dcloud.aws.region.static=<aws_region> -Dcloud.aws.credentials.accountId=<accountId>  -jar demo-0.0.1-SNAPSHOT.jar`    
  - Issue the following cURL request to get the users. We have kept a Thread.sleep() for 5 seconds before it serves the request.
  - Notice the application log. You will see that message was sent to SNS
  - Issue the same cURL again to get the list of users. 
