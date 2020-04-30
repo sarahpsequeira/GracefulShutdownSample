@@ -1,0 +1,101 @@
+2020-04-30 09:28:32.661  INFO 44838 --- [nio-8081-exec-1] c.s.a.demo.controller.UserController     : Received request to get users by last name, time: 2020-04-30T09:28:32.661
+2020-04-30 09:28:32.862  INFO 44838 --- [nio-8081-exec-1] c.s.a.demo.service.UserService           : Success found users by last name
+2020-04-30 09:28:37.866  INFO 44838 --- [nio-8081-exec-1] c.s.a.demo.controller.UserController     : Received response, Going to publish message to MQ, time: 2020-04-30T09:28:37.866
+2020-04-30 09:28:37.876  INFO 44838 --- [ceful-Startup-1] c.s.a.d.event.UserAccessedEventListener  : Received user accessed event - Test users have been accessed
+2020-04-30 09:28:37.939 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.metrics.AwsSdkMetrics      : Admin mbean registered under com.amazonaws.management:type=AwsSdkMetrics
+2020-04-30 09:28:37.962 DEBUG 44838 --- [ceful-Startup-1] c.a.auth.AWSCredentialsProviderChain     : Unable to load credentials from EnvironmentVariableCredentialsProvider: Unable to load AWS credentials from environment variables (AWS_ACCESS_KEY_ID (or AWS_ACCESS_KEY) and AWS_SECRET_KEY (or AWS_SECRET_ACCESS_KEY))
+2020-04-30 09:28:37.962 DEBUG 44838 --- [ceful-Startup-1] c.a.auth.AWSCredentialsProviderChain     : Unable to load credentials from SystemPropertiesCredentialsProvider: Unable to load AWS credentials from Java system properties (aws.accessKeyId and aws.secretKey)
+2020-04-30 09:28:37.968 DEBUG 44838 --- [ceful-Startup-1] c.a.auth.AWSCredentialsProviderChain     : Loading credentials from com.amazonaws.auth.profile.ProfileCredentialsProvider@3507ac75
+2020-04-30 09:28:37.984 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Sending Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["ListTopics"],"Version":["2010-03-31"]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: a9c9efa3-2811-cb13-f73c-3be15a25a982, ) 
+2020-04-30 09:28:38.055 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:a9c9efa3-2811-cb13-f73c-3be15a25a982
+amz-sdk-retry:0/0/500
+host:sns.us-west-2.amazonaws.com
+user-agent:aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161
+x-amz-date:20200430T162837Z
+x-amz-security-token:FwoGZXIvYXdzEPL//////////wEaDKqfwem/9a0xdYPB8SLtATHyJRM3xJk3n2Z2yjlCDVwXE8AaSQhUlBqdiYozLVS6zntGjUFzObnflt07vHuEiGuBPkq8az0JtOVyfCxqc1BloppnIy5VwIIWwtuXV52MTcv9Eb1fGi3E3KuLlAH3+ferGgqY+w3XbSFA4Uq/0FXM+Pns0Ak4wjW53480MPRfc+Bki1mo4NpdZgpElG3f5gtm/fmogeQHNoYJCmCy5NXpJrxNFVTbqrxQ30ZS5579BQD3x87LgUEWeXiSo82v6MBDBR7DZ1/btLAKuvGbKQ2b3PgwpIOyJl3JMmCxn0pntghRIC3Vd5vtgGkjJiir8qv1BTIrZxfPF8WNmxMF5UqeBv6m9otxbwA061dOWFAodZ+QCEi+ZqVpspQB8yVoXQ==
+
+amz-sdk-invocation-id;amz-sdk-retry;host;user-agent;x-amz-date;x-amz-security-token
+55e772bd3d832d8507965af84ab07fd17d9be3cbb788151ceb0d7fc2be442a54"
+2020-04-30 09:28:38.055 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20200430T162837Z
+20200430/us-west-2/sns/aws4_request
+ae9679361d8307d95d275052d7d356c73c3fbce7e1f31f135b2149ad793c9a55"
+2020-04-30 09:28:38.068 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : Generating a new signing key as the signing key not available in the cache for the date 1588204800000
+2020-04-30 09:28:38.301 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : connecting to sns.us-west-2.amazonaws.com/52.119.170.155:443
+2020-04-30 09:28:38.301 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : Connecting socket to sns.us-west-2.amazonaws.com/52.119.170.155:443 with timeout 10000
+2020-04-30 09:28:38.368 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2020-04-30 09:28:38.368 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2020-04-30 09:28:38.368 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : socket.getSupportedProtocols(): [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2], socket.getEnabledProtocols(): [TLSv1, TLSv1.1, TLSv1.2]
+2020-04-30 09:28:38.369 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : TLS protocol enabled for SSL handshake: [TLSv1.2, TLSv1.1, TLSv1]
+2020-04-30 09:28:38.369 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : Starting handshake
+2020-04-30 09:28:38.522 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    : Secure session established
+2020-04-30 09:28:38.522 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    :  negotiated protocol: TLSv1.2
+2020-04-30 09:28:38.522 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    :  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+2020-04-30 09:28:38.523 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    :  peer principal: CN=sns.us-west-2.amazonaws.com
+2020-04-30 09:28:38.523 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    :  peer alternative names: [sns.us-west-2.amazonaws.com, *.sns.us-west-2.vpce.amazonaws.com]
+2020-04-30 09:28:38.523 DEBUG 44838 --- [ceful-Startup-1] c.a.http.conn.ssl.SdkTLSSocketFactory    :  issuer principal: CN=Amazon, OU=Server CA 1B, O=Amazon, C=US
+2020-04-30 09:28:38.530 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.internal.SdkSSLSocket      : created: sns.us-west-2.amazonaws.com/52.119.170.155:443
+2020-04-30 09:28:38.679 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Received successful response: 200, AWS Request ID: cee185bb-f13f-55cc-a933-d29f0fc90a98
+2020-04-30 09:28:38.679 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.requestId                  : x-amzn-RequestId: cee185bb-f13f-55cc-a933-d29f0fc90a98
+2020-04-30 09:28:38.681 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Sending Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["ListTopics"],"Version":["2010-03-31"],"NextToken":["AAGK9YNeNwT1tVwgSiebsMdJbA/DwYplzzGtuSydOoVnIdgdZYzaIvOlPLG+kmoePHc="]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: a17fa13a-ed3b-bd32-ff69-75a8cce385d2, ) 
+2020-04-30 09:28:38.682 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:a17fa13a-ed3b-bd32-ff69-75a8cce385d2
+amz-sdk-retry:0/0/500
+host:sns.us-west-2.amazonaws.com
+user-agent:aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161
+x-amz-date:20200430T162838Z
+x-amz-security-token:FwoGZXIvYXdzEPL//////////wEaDKqfwem/9a0xdYPB8SLtATHyJRM3xJk3n2Z2yjlCDVwXE8AaSQhUlBqdiYozLVS6zntGjUFzObnflt07vHuEiGuBPkq8az0JtOVyfCxqc1BloppnIy5VwIIWwtuXV52MTcv9Eb1fGi3E3KuLlAH3+ferGgqY+w3XbSFA4Uq/0FXM+Pns0Ak4wjW53480MPRfc+Bki1mo4NpdZgpElG3f5gtm/fmogeQHNoYJCmCy5NXpJrxNFVTbqrxQ30ZS5579BQD3x87LgUEWeXiSo82v6MBDBR7DZ1/btLAKuvGbKQ2b3PgwpIOyJl3JMmCxn0pntghRIC3Vd5vtgGkjJiir8qv1BTIrZxfPF8WNmxMF5UqeBv6m9otxbwA061dOWFAodZ+QCEi+ZqVpspQB8yVoXQ==
+
+amz-sdk-invocation-id;amz-sdk-retry;host;user-agent;x-amz-date;x-amz-security-token
+e9096da9d212d40b4331a9b6eb418f685e953546a373ee56d7000bbb3af3ffa0"
+2020-04-30 09:28:38.682 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20200430T162838Z
+20200430/us-west-2/sns/aws4_request
+edd646d3da55865a140eb51e41802c0635f6085e567509f3cdd1c92780d32d1a"
+2020-04-30 09:28:38.807 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Received successful response: 200, AWS Request ID: cb255cfd-2783-5379-b226-0bd9d9753c2d
+2020-04-30 09:28:38.807 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.requestId                  : x-amzn-RequestId: cb255cfd-2783-5379-b226-0bd9d9753c2d
+2020-04-30 09:28:38.808 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Sending Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["ListTopics"],"Version":["2010-03-31"],"NextToken":["AAHAN38bcZ5H/iG9fEcQXlshuyIyS/YTfG04sxc+gjeYMQpnFY2lJ0zFfBi6YCnd02c="]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: a2faad8f-644f-7296-2fa9-d5bed064e460, ) 
+2020-04-30 09:28:38.808 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:a2faad8f-644f-7296-2fa9-d5bed064e460
+amz-sdk-retry:0/0/500
+host:sns.us-west-2.amazonaws.com
+user-agent:aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161
+x-amz-date:20200430T162838Z
+x-amz-security-token:FwoGZXIvYXdzEPL//////////wEaDKqfwem/9a0xdYPB8SLtATHyJRM3xJk3n2Z2yjlCDVwXE8AaSQhUlBqdiYozLVS6zntGjUFzObnflt07vHuEiGuBPkq8az0JtOVyfCxqc1BloppnIy5VwIIWwtuXV52MTcv9Eb1fGi3E3KuLlAH3+ferGgqY+w3XbSFA4Uq/0FXM+Pns0Ak4wjW53480MPRfc+Bki1mo4NpdZgpElG3f5gtm/fmogeQHNoYJCmCy5NXpJrxNFVTbqrxQ30ZS5579BQD3x87LgUEWeXiSo82v6MBDBR7DZ1/btLAKuvGbKQ2b3PgwpIOyJl3JMmCxn0pntghRIC3Vd5vtgGkjJiir8qv1BTIrZxfPF8WNmxMF5UqeBv6m9otxbwA061dOWFAodZ+QCEi+ZqVpspQB8yVoXQ==
+
+amz-sdk-invocation-id;amz-sdk-retry;host;user-agent;x-amz-date;x-amz-security-token
+54fa14c09a255087276c7c891d332e6f8ba23d00ca5f111b1c8fa57b9a7072a4"
+2020-04-30 09:28:38.808 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20200430T162838Z
+20200430/us-west-2/sns/aws4_request
+d00e6a360cf67160aad1585809751c8cc74fd1c4117110adcc5255fda9518f25"
+2020-04-30 09:28:38.897 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Received successful response: 200, AWS Request ID: a971acb9-de00-5123-bfa5-fb9d20f64e77
+2020-04-30 09:28:38.897 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.requestId                  : x-amzn-RequestId: a971acb9-de00-5123-bfa5-fb9d20f64e77
+2020-04-30 09:28:38.915 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Sending Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["Publish"],"Version":["2010-03-31"],"TopicArn":["arn:aws:sns:us-west-2:670055277015:outliers-1-case"],"Message":["{\"source\":{},\"timestamp\":1588264117875,\"message\":\"Test users have been accessed\"}"],"Subject":["Users have been accessed"],"MessageAttributes.entry.1.Name":["NOTIFICATION_SUBJECT_HEADER"],"MessageAttributes.entry.1.Value.DataType":["String"],"MessageAttributes.entry.1.Value.StringValue":["Users have been accessed"],"MessageAttributes.entry.2.Name":["id"],"MessageAttributes.entry.2.Value.DataType":["String"],"MessageAttributes.entry.2.Value.StringValue":["17a432eb-89af-bef5-f109-1868d657208a"],"MessageAttributes.entry.3.Name":["contentType"],"MessageAttributes.entry.3.Value.DataType":["String"],"MessageAttributes.entry.3.Value.StringValue":["application/json"],"MessageAttributes.entry.4.Name":["timestamp"],"MessageAttributes.entry.4.Value.DataType":["Number.java.lang.Long"],"MessageAttributes.entry.4.Value.StringValue":["1588264118911"]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: d91ad808-f0ce-8232-8828-2bfbac19a48d, ) 
+2020-04-30 09:28:38.916 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:d91ad808-f0ce-8232-8828-2bfbac19a48d
+amz-sdk-retry:0/0/500
+host:sns.us-west-2.amazonaws.com
+user-agent:aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161
+x-amz-date:20200430T162838Z
+x-amz-security-token:FwoGZXIvYXdzEPL//////////wEaDKqfwem/9a0xdYPB8SLtATHyJRM3xJk3n2Z2yjlCDVwXE8AaSQhUlBqdiYozLVS6zntGjUFzObnflt07vHuEiGuBPkq8az0JtOVyfCxqc1BloppnIy5VwIIWwtuXV52MTcv9Eb1fGi3E3KuLlAH3+ferGgqY+w3XbSFA4Uq/0FXM+Pns0Ak4wjW53480MPRfc+Bki1mo4NpdZgpElG3f5gtm/fmogeQHNoYJCmCy5NXpJrxNFVTbqrxQ30ZS5579BQD3x87LgUEWeXiSo82v6MBDBR7DZ1/btLAKuvGbKQ2b3PgwpIOyJl3JMmCxn0pntghRIC3Vd5vtgGkjJiir8qv1BTIrZxfPF8WNmxMF5UqeBv6m9otxbwA061dOWFAodZ+QCEi+ZqVpspQB8yVoXQ==
+
+amz-sdk-invocation-id;amz-sdk-retry;host;user-agent;x-amz-date;x-amz-security-token
+a0a5e670df79d46707608fa4e92701efa5c2e0294f696419a44f66a4de393d21"
+2020-04-30 09:28:38.916 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.auth.AWS4Signer            : AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20200430T162838Z
+20200430/us-west-2/sns/aws4_request
+f8e02a546679f3a84708411b07c96de6fcb7d8cd70c32b09f742148d9bf3438b"
+2020-04-30 09:28:38.982 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.request                    : Received successful response: 200, AWS Request ID: 0c1b24ec-548f-56d1-8d0e-73c8aa793985
+2020-04-30 09:28:38.982 DEBUG 44838 --- [ceful-Startup-1] com.amazonaws.requestId                  : x-amzn-RequestId: 0c1b24ec-548f-56d1-8d0e-73c8aa793985
+2020-04-30 09:28:38.982  INFO 44838 --- [ceful-Startup-1] c.s.a.d.event.UserAccessedEventListener  : Published event to SNS Topic!
+2020-04-30 09:28:38.983  INFO 44838 --- [ceful-Startup-1] c.s.a.demo.controller.UserController     : Successfully published event, time: 2020-04-30T09:28:38.983
