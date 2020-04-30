@@ -17,5 +17,3 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
  - You will find that the message wasn't sent to the topic. 
  
 It is expected that it should serve the async request to send message to MQ. It fails to do so.
- 
-
