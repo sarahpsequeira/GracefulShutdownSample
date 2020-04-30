@@ -32,4 +32,3 @@ GracefulShutdownSample application explains and reproduces the problem in the sp
  #### Actual Result
  Request is completed but message is not published to topic.. (error is thrown)```logs/graceful_shutdown_error_path.log```.   
  
-4) Notice that though the request is completed it does not publish message to the topic and error is thrown
