@@ -1,5 +1,6 @@
 package com.sample.application.demo.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,15 +27,18 @@ public class UserService {
 
     Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    public List<UserGetResponse> getUsersByLastName(String lastName){
+    public List<UserGetResponse> getUsersByLastName(String lastName) throws InterruptedException{
         List<User>users=userRepository.findByLastName(lastName);
-        logger.debug("Success found users by last name");
+        logger.info("Success found users by last name");
         List<UserGetResponse>userGetResponseList=new ArrayList<>();
         for(User user:users){
             userGetResponseList.add(getUserGetResponse(user));
         }
-        UserAccessedEvent userAccessedEvent = new UserAccessedEvent(this,"Test users have been accessed");
-        applicationEventPublisher.publishEvent(userAccessedEvent);
+
+        // We are doing some DB operations calling multiple micro-services.
+        // To simulate, we are adding a wait time
+        Thread.sleep(5000l);
+
         return userGetResponseList;
     }
 
