@@ -1,0 +1,107 @@
+
+2020-04-30 09:28:46.677  INFO 44838 --- [nio-8081-exec-2] c.s.a.demo.controller.UserController     : Received request to get users by last name, time: 2020-04-30T09:28:46.677
+2020-04-30 09:28:46.678  INFO 44838 --- [nio-8081-exec-2] c.s.a.demo.service.UserService           : Success found users by last name
+^C2020-04-30 09:28:48.793  INFO 44838 --- [extShutdownHook] o.s.b.w.e.tomcat.TomcatGracefulShutdown  : Commencing graceful shutdown, allowing up to 30s for active requests to complete
+2020-04-30 09:28:51.683  INFO 44838 --- [nio-8081-exec-2] c.s.a.demo.controller.UserController     : Received response, Going to publish message to MQ, time: 2020-04-30T09:28:51.683
+2020-04-30 09:28:51.683  INFO 44838 --- [ceful-Startup-2] c.s.a.d.event.UserAccessedEventListener  : Received user accessed event - Test users have been accessed
+2020-04-30 09:28:51.684 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.request                    : Sending Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["Publish"],"Version":["2010-03-31"],"TopicArn":["arn:aws:sns:us-west-2:670055277015:outliers-1-case"],"Message":["{\"source\":{},\"timestamp\":1588264131683,\"message\":\"Test users have been accessed\"}"],"Subject":["Users have been accessed"],"MessageAttributes.entry.1.Name":["NOTIFICATION_SUBJECT_HEADER"],"MessageAttributes.entry.1.Value.DataType":["String"],"MessageAttributes.entry.1.Value.StringValue":["Users have been accessed"],"MessageAttributes.entry.2.Name":["id"],"MessageAttributes.entry.2.Value.DataType":["String"],"MessageAttributes.entry.2.Value.StringValue":["4146b2fe-2b32-5244-75dc-cb2a965ec066"],"MessageAttributes.entry.3.Name":["contentType"],"MessageAttributes.entry.3.Value.DataType":["String"],"MessageAttributes.entry.3.Value.StringValue":["application/json"],"MessageAttributes.entry.4.Name":["timestamp"],"MessageAttributes.entry.4.Value.DataType":["Number.java.lang.Long"],"MessageAttributes.entry.4.Value.StringValue":["1588264131684"]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: 6beb51b8-8924-c367-2cbf-ab1572c26bd8, ) 
+2020-04-30 09:28:51.686 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.auth.AWS4Signer            : AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:6beb51b8-8924-c367-2cbf-ab1572c26bd8
+amz-sdk-retry:0/0/500
+host:sns.us-west-2.amazonaws.com
+user-agent:aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161
+x-amz-date:20200430T162851Z
+x-amz-security-token:FwoGZXIvYXdzEPL//////////wEaDKqfwem/9a0xdYPB8SLtATHyJRM3xJk3n2Z2yjlCDVwXE8AaSQhUlBqdiYozLVS6zntGjUFzObnflt07vHuEiGuBPkq8az0JtOVyfCxqc1BloppnIy5VwIIWwtuXV52MTcv9Eb1fGi3E3KuLlAH3+ferGgqY+w3XbSFA4Uq/0FXM+Pns0Ak4wjW53480MPRfc+Bki1mo4NpdZgpElG3f5gtm/fmogeQHNoYJCmCy5NXpJrxNFVTbqrxQ30ZS5579BQD3x87LgUEWeXiSo82v6MBDBR7DZ1/btLAKuvGbKQ2b3PgwpIOyJl3JMmCxn0pntghRIC3Vd5vtgGkjJiir8qv1BTIrZxfPF8WNmxMF5UqeBv6m9otxbwA061dOWFAodZ+QCEi+ZqVpspQB8yVoXQ==
+
+amz-sdk-invocation-id;amz-sdk-retry;host;user-agent;x-amz-date;x-amz-security-token
+63007e3776c5bc9dea4df357733a243c9f4523a98b8a65b31f06f4a39a75ab9f"
+2020-04-30 09:28:51.687 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.auth.AWS4Signer            : AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20200430T162851Z
+20200430/us-west-2/sns/aws4_request
+ccb2b0822e263a07a0cf7a40635868d6f3b01a984db3499635e4418bed271c50"
+2020-04-30 09:28:51.690 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.internal.SdkSSLSocket      : shutting down output of sns.us-west-2.amazonaws.com/52.119.170.155:443
+2020-04-30 09:28:51.690 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.internal.SdkSSLSocket      : closing sns.us-west-2.amazonaws.com/52.119.170.155:443
+2020-04-30 09:28:51.691 DEBUG 44838 --- [ceful-Startup-2] c.a.http.conn.ssl.SdkTLSSocketFactory    : connecting to sns.us-west-2.amazonaws.com/52.119.170.155:443
+2020-04-30 09:28:51.691 DEBUG 44838 --- [ceful-Startup-2] c.a.http.conn.ssl.SdkTLSSocketFactory    : Connecting socket to sns.us-west-2.amazonaws.com/52.119.170.155:443 with timeout 10000
+2020-04-30 09:28:51.700  INFO 44838 --- [extShutdownHook] o.s.b.w.e.tomcat.TomcatGracefulShutdown  : Graceful shutdown complete
+2020-04-30 09:28:51.710 DEBUG 44838 --- [nnection-reaper] com.amazonaws.http.IdleConnectionReaper  : Reaper thread: 
+
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[na:1.8.0_161]
+	at com.amazonaws.http.IdleConnectionReaper.run(IdleConnectionReaper.java:188) ~[aws-java-sdk-core-1.11.415.jar!/:na]
+
+2020-04-30 09:28:51.710 DEBUG 44838 --- [nnection-reaper] com.amazonaws.http.IdleConnectionReaper  : Shutting down reaper thread.
+2020-04-30 09:28:51.711 DEBUG 44838 --- [ceful-Startup-2] c.a.h.c.ClientConnectionManagerFactory   : 
+
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76) ~[aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.conn.$Proxy87.connect(Unknown Source) [na:na]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) [httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) [httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) [httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) [httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) [httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) [httpclient-4.5.12.jar!/:4.5.12]
+	at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1258) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1074) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:745) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:719) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:701) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:669) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:651) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:515) [aws-java-sdk-core-1.11.415.jar!/:na]
+	at com.amazonaws.services.sns.AmazonSNSClient.doInvoke(AmazonSNSClient.java:2488) [aws-java-sdk-sns-1.11.415.jar!/:na]
+	at com.amazonaws.services.sns.AmazonSNSClient.invoke(AmazonSNSClient.java:2457) [aws-java-sdk-sns-1.11.415.jar!/:na]
+	at com.amazonaws.services.sns.AmazonSNSClient.invoke(AmazonSNSClient.java:2446) [aws-java-sdk-sns-1.11.415.jar!/:na]
+	at com.amazonaws.services.sns.AmazonSNSClient.executePublish(AmazonSNSClient.java:1848) [aws-java-sdk-sns-1.11.415.jar!/:na]
+	at com.amazonaws.services.sns.AmazonSNSClient.publish(AmazonSNSClient.java:1820) [aws-java-sdk-sns-1.11.415.jar!/:na]
+	at org.springframework.cloud.aws.messaging.core.TopicMessageChannel.sendInternal(TopicMessageChannel.java:69) [spring-cloud-aws-messaging-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.messaging.support.AbstractMessageChannel.send(AbstractMessageChannel.java:136) [spring-messaging-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.messaging.support.AbstractMessageChannel.send(AbstractMessageChannel.java:122) [spring-messaging-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.cloud.aws.messaging.core.support.AbstractMessageChannelMessagingSendingTemplate.doSend(AbstractMessageChannelMessagingSendingTemplate.java:67) [spring-cloud-aws-messaging-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.cloud.aws.messaging.core.support.AbstractMessageChannelMessagingSendingTemplate.doSend(AbstractMessageChannelMessagingSendingTemplate.java:44) [spring-cloud-aws-messaging-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.send(AbstractMessageSendingTemplate.java:109) [spring-messaging-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.convertAndSend(AbstractMessageSendingTemplate.java:151) [spring-messaging-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.convertAndSend(AbstractMessageSendingTemplate.java:129) [spring-messaging-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.cloud.aws.messaging.core.support.AbstractMessageChannelMessagingSendingTemplate.convertAndSend(AbstractMessageChannelMessagingSendingTemplate.java:88) [spring-cloud-aws-messaging-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate.sendNotification(NotificationMessagingTemplate.java:79) [spring-cloud-aws-messaging-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at com.sample.application.demo.event.UserAccessedEventListener.publishMessageToAWS(UserAccessedEventListener.java:37) [classes!/:0.0.1-SNAPSHOT]
+	at com.sample.application.demo.event.UserAccessedEventListener.onApplicationEvent(UserAccessedEventListener.java:31) [classes!/:0.0.1-SNAPSHOT]
+	at com.sample.application.demo.event.UserAccessedEventListener.onApplicationEvent(UserAccessedEventListener.java:13) [classes!/:0.0.1-SNAPSHOT]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) [spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) [spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) [spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403) [spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360) [spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at com.sample.application.demo.service.AuditLogService.publishMessage(AuditLogService.java:26) [classes!/:0.0.1-SNAPSHOT]
+	at com.sample.application.demo.service.AuditLogService$$FastClassBySpringCGLIB$$1e3955dd.invoke(<generated>) [classes!/:0.0.1-SNAPSHOT]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) [spring-aop-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) [spring-aop-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:354) ~[na:1.8.0_161]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_161]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_161]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_161]
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142) ~[aws-java-sdk-core-1.11.415.jar!/:na]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.12.jar!/:4.5.12]
+	... 55 common frames omitted
+
+2020-04-30 09:28:51.715 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.request                    : Retrying Request: POST https://sns.us-west-2.amazonaws.com / Parameters: ({"Action":["Publish"],"Version":["2010-03-31"],"TopicArn":["arn:aws:sns:us-west-2:670055277015:outliers-1-case"],"Message":["{\"source\":{},\"timestamp\":1588264131683,\"message\":\"Test users have been accessed\"}"],"Subject":["Users have been accessed"],"MessageAttributes.entry.1.Name":["NOTIFICATION_SUBJECT_HEADER"],"MessageAttributes.entry.1.Value.DataType":["String"],"MessageAttributes.entry.1.Value.StringValue":["Users have been accessed"],"MessageAttributes.entry.2.Name":["id"],"MessageAttributes.entry.2.Value.DataType":["String"],"MessageAttributes.entry.2.Value.StringValue":["4146b2fe-2b32-5244-75dc-cb2a965ec066"],"MessageAttributes.entry.3.Name":["contentType"],"MessageAttributes.entry.3.Value.DataType":["String"],"MessageAttributes.entry.3.Value.StringValue":["application/json"],"MessageAttributes.entry.4.Name":["timestamp"],"MessageAttributes.entry.4.Value.DataType":["Number.java.lang.Long"],"MessageAttributes.entry.4.Value.StringValue":["1588264131684"]}Headers: (User-Agent: aws-sdk-java/1.11.415 Mac_OS_X/10.15.3 Java_HotSpot(TM)_64-Bit_Server_VM/25.161-b12 java/1.8.0_161, amz-sdk-invocation-id: 6beb51b8-8924-c367-2cbf-ab1572c26bd8, ) 
+2020-04-30 09:28:51.716 DEBUG 44838 --- [ceful-Startup-2] com.amazonaws.http.AmazonHttpClient      : Retriable error detected, will retry in 16ms, attempt number: 0

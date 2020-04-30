@@ -17,7 +17,7 @@ public class UserAccessedEventListener implements ApplicationListener<UserAccess
 
     NotificationMessagingTemplate notificationMessagingTemplate;
 
-    @Value("${cloud.aws.sns.topic.userAccess}")
+    @Value("${cloud.aws.sns.topic.topicName}")
     String snsTopicName;
 
     @Autowired
@@ -27,7 +27,7 @@ public class UserAccessedEventListener implements ApplicationListener<UserAccess
 
     @Override
     public void onApplicationEvent(UserAccessedEvent userAccessedEvent) {
-        System.out.println("Received user accessed event - " + userAccessedEvent.getMessage());
+        logger.info("Received user accessed event - " + userAccessedEvent.getMessage());
         publishMessageToAWS(userAccessedEvent);
 
     }
