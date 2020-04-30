@@ -27,7 +27,7 @@ public class UserAccessedEventListener implements ApplicationListener<UserAccess
 
     @Override
     public void onApplicationEvent(UserAccessedEvent userAccessedEvent) {
-        System.out.println("Received user accessed event - " + userAccessedEvent.getMessage());
+        logger.info("Received user accessed event - " + userAccessedEvent.getMessage());
         publishMessageToAWS(userAccessedEvent);
 
     }

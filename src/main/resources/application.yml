@@ -7,6 +7,11 @@ spring.datasource.username: sa
 spring.datasource.password: password
 spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
 
+spring:
+  threads:
+    corePoolSize: 10
+    maxPoolSize: 20
+    queueCapacity: 10000
 spring.h2.console.enabled: true
 
 cloud:
@@ -15,13 +20,15 @@ cloud:
       auto: false
     sns:
       topic:
-        userAccess: 
+        # Change the AWS topic
+        userAccess: outliers-1-case
     region:
       auto: false
       static: us-west-2
     credentials:
       instanceProfile: true
-      accountId: 
+      # Change the account Id for the AWS
+      accountId: 670055277015
 
 # remove the account Id
 

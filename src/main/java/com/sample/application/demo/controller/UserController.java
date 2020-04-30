@@ -1,5 +1,6 @@
 package com.sample.application.demo.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.application.demo.dto.UserGetResponse;
 import com.sample.application.demo.repository.UserRepository;
+import com.sample.application.demo.service.AuditLogService;
 import com.sample.application.demo.service.UserService;
 
 @RestController
@@ -24,12 +26,18 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    AuditLogService auditLogService;
+
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/lastName/{lastName}")
-    public List<UserGetResponse> findByLastName(@PathVariable String lastName) {
-        logger.debug("Received request to get users by last name");
-        return userService.getUsersByLastName(lastName);
+    public List<UserGetResponse> findByLastName(@PathVariable String lastName) throws InterruptedException {
+        logger.info("Received request to get users by last name, time: {}", LocalDateTime.now());
+        List<UserGetResponse> userGetResponses = userService.getUsersByLastName(lastName);
+        logger.info("Received response, Going to publish message to MQ, time: {}", LocalDateTime.now());
+        auditLogService.publishMessage();
+        return userGetResponses;
     }
 
     @GetMapping
