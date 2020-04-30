@@ -21,16 +21,21 @@ cloud:
     sns:
       topic:
         # Change the AWS topic
-        userAccess: outliers-1-case
+        userAccess: topic-name
     region:
       auto: false
       static: us-west-2
     credentials:
       instanceProfile: true
       # Change the account Id for the AWS
-      accountId: 670055277015
-
-# remove the account Id
+      accountId: account-id
 
 server.shutdown.grace-period: 30s
 
+logging:
+  level:
+    root: ERROR
+    com.sample.application.demo: DEBUG
+    org.hibernate.SQL: INFO
+    com.amazonaws: DEBUG
+    org.springframework.boot.web.embedded.tomcat: INFO
